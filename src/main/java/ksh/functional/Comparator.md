@@ -1,7 +1,10 @@
+
+
+
 [Comparator(I)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Comparator.html) is used to  order the objects of user-defined classes. A comparator object is capable of comparing two object classes.  
 
 ```java
-int compare​(T o1, T o2)
+public int compare​(T o1, T o2)
 ```
 
 #### Colleactions.sort()
@@ -9,6 +12,7 @@ int compare​(T o1, T o2)
 public static <T extends Comparable<? super T>> void sort​(List<T> list)
 public static <T> void sort​(List<T> list, Comparator<? super T> c)
 ```
+
 Internally Sort() will call compare() of the class it is sorting. To compare two elements. It asks like  
 -1 -  
 0  - 
