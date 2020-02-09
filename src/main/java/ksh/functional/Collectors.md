@@ -16,8 +16,8 @@ DoubleSummaryStatistics
 public static <T> Collector<T,​?,​Optional<T>> maxBy​(Comparator<? super T> comparator)
 public static <T> Collector<T,​?,​Optional<T>> minBy​(Comparator<? super T> comparator)
 ```
-returns collector that collects largest element in a stream according to supplied Comparator.
-returns collector that collects smallest element in a stream according to supplied Comparator.
+Returns collector that collects largest element in a stream according to supplied Comparator.</br>
+Returns collector that collects smallest element in a stream according to supplied Comparator.
 
 ```java
 public static <T> Collector<T,​?,​Integer> summingInt​(ToIntFunction<? super T> mapper)
@@ -38,7 +38,7 @@ public static <T> Collector<T,​?,​IntSummaryStatistics> summarizingInt​(To
 public static <T> Collector<T,​?,​LongSummaryStatistics> summarizingLong​(ToLongFunction<? super T> mapper)
 public static <T> Collector<T,​?,​DoubleSummaryStatistics> summarizingDouble​(ToDoubleFunction<? super T> mapper)
 ```
-
+returns a Collector which Collects statistics of [​IntSummaryStatistics](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/IntSummaryStatistics.html), [​LongSummaryStatistics](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/LongSummaryStatistics.html), [DoubleSummaryStatistics](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/DoubleSummaryStatistics.html) - ststistics information sum, max, min, average.. of input elements  
 
 ```java
 public static <T,​K> Collector<T,​?,​Map<K,​List<T>>> groupingBy​(Function<? super T,​? extends K> classifier)
