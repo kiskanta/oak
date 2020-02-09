@@ -1,33 +1,39 @@
 `
 Stream.collect()
-Collector(I)
-Collectors(C)
+[Collector(I)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collector.html)
+[Collectors(C)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collectors.html) 
 `
 Stream.collect() - is a terminal operation in Stream. It is a special case of reduction operation called mutable reduction operation. Because it returns mutable result container such as List, Set and Map according to supplied Collector.
 
-
-
+`java.util.stream.Collectors (C)` contains static factory methods which perform some common operations such as accumulating elements into collection, finding min, max, average,sum of elements etc...   
+	All the methods return Collector type. which will supplied to collect() as argument. 
 DoubleSummaryStatistics
+
+
+```java
+
+```
 
 ```java
 public static <T> Collector<T,​?,​Optional<T>> maxBy​(Comparator<? super T> comparator)
-```
-
-```java
 public static <T> Collector<T,​?,​Optional<T>> minBy​(Comparator<? super T> comparator)
 ```
+returns collector that collects largest element in a stream according to supplied Comparator.
+returns collector that collects smallest element in a stream according to supplied Comparator.
 
 ```java
 public static <T> Collector<T,​?,​Integer> summingInt​(ToIntFunction<? super T> mapper)
 public static <T> Collector<T,​?,​Long> summingLong​(ToLongFunction<? super T> mapper)
 public static <T> Collector<T,​?,​Double> summingDouble​(ToDoubleFunction<? super T> mapper)
 ```
+Returns a collector which collects sum of all input elements. 
 
 ```java
 public static <T> Collector<T,​?,​Double> averagingInt​(ToIntFunction<? super T> mapper)
 public static <T> Collector<T,​?,​Double> averagingLong​(ToLongFunction<? super T> mapper)
 public static <T> Collector<T,​?,​Double> averagingDouble​(ToDoubleFunction<? super T> mapper)
 ```
+Returns a collector which collects average of input elements.
 
 ```
 public static <T> Collector<T,​?,​IntSummaryStatistics> summarizingInt​(ToIntFunction<? super T> mapper)
