@@ -4,7 +4,7 @@
 int compare​(T o1, T o2)
 ```
 
-####Colleactions.sort()
+#### Colleactions.sort()
 ```java
 public static <T extends Comparable<? super T>> void sort​(List<T> list)
 public static <T> void sort​(List<T> list, Comparator<? super T> c)
@@ -14,7 +14,7 @@ Internally Sort() will call compare() of the class it is sorting. To compare two
 0  - 
 1  - 
 
-###since jdk 8
+### since jdk 8
 
 ```java
 default Comparator<T> reversed()
