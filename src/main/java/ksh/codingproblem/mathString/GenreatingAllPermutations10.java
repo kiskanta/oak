@@ -2,7 +2,6 @@ package ksh.codingproblem.mathString;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -62,11 +61,5 @@ public class GenreatingAllPermutations10 {
                 	.map(c -> str.charAt(i) + c)
                 );
 	}
-	
-	public static void main(String[] args) {
-		GenreatingAllPermutations10 genratePermutation = new GenreatingAllPermutations10();
-		
-	}
-	
 	
 }

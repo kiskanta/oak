@@ -1,7 +1,5 @@
 package ksh.fund;
 
-import java.util.logging.Logger;
-
 public class String12Changes {
 
 	/**
