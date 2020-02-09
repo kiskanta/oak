@@ -1,8 +1,6 @@
-`
-Stream.collect()
-[Collector(I)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collector.html)
-[Collectors(C)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collectors.html) 
-`
+
+Stream.collect(), [Collector(I)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collector.html) and [Collectors(C)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collectors.html) 
+
 Stream.collect() - is a terminal operation in Stream. It is a special case of reduction operation called mutable reduction operation. Because it returns mutable result container such as List, Set and Map according to supplied Collector.
 
 `java.util.stream.Collectors (C)` contains static factory methods which perform some common operations such as accumulating elements into collection, finding min, max, average,sum of elements etc...   
