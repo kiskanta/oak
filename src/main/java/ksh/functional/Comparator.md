@@ -53,3 +53,19 @@ static <T> Comparator<T> nullsFirst​(Comparator<? super T> comparator)
 static <T> Comparator<T> nullsLast​(Comparator<? super T> comparator)
 
 ```
+
+
+## Sorting Map directly with `Comparators`.[Comparator(I)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.Entry.html)
+
+
+```java
+static <K extends Comparable<? super K>,​V> Comparator<Map.Entry<K,​V>> comparingByKey()
+static <K,​V> Comparator<Map.Entry<K,​V>> comparingByKey​(Comparator<? super K> cmp)
+```
+
+```java
+static <K,​V extends Comparable<? super V>> Comparator<Map.Entry<K,​V>> comparingByValue()
+static <K,​V> Comparator<Map.Entry<K,​V>> comparingByValue​(Comparator<? super V> cmp)
+```
+
+
