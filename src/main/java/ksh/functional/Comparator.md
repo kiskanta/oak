@@ -55,7 +55,7 @@ static <T> Comparator<T> nullsLast​(Comparator<? super T> comparator)
 ```
 
 
-## Sorting Map directly with `Comparators`.[Comparator(I)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.Entry.html)
+## Sorting Map directly with `Comparators`.[Map.Entry(I)](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.Entry.html)
 
 
 ```java
