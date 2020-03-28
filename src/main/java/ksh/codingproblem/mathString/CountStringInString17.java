@@ -17,11 +17,12 @@ public class CountStringInString17 {
 		return count;
 	}
 	
+	/*
 	public int countringStringInStringV2(String input, String findStr){
 		int result = input.split(Pattern.quote(findStr), -1).length - 1;
 		
 		return result <0 ? 0: result;
-	}
+	}*/
 	
 	public int countringStringInStringV3(String input, String findStr){
 		

@@ -29,7 +29,7 @@ public class CountStringInString17Test {
 		displayExecutionTime(clock.millis() - startTimeV1);
 		
 		long startTimeV2 = clock.millis();
-		int count2 = strInStr.countringStringInStringV2(string, subString);
+		//int count2 = strInStr.countringStringInStringV2(string, subString);
 		displayExecutionTime(clock.millis() - startTimeV2);
 		
 		long startTimeV3 = clock.millis();
@@ -41,7 +41,7 @@ public class CountStringInString17Test {
 		displayExecutionTime(clock.millis() - startTimeV4);
 		
 		System.out.println(count);
-		System.out.println(count2);
+		//System.out.println(count2);
 		System.out.println(count3);
 		System.out.println(count4);
 	}
