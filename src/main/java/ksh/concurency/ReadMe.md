@@ -1,26 +1,27 @@
-##[java.util.concurrent](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/concurrent/package-summary.html)
+## [java.util.concurrent - JDK1.5](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/concurrent/package-summary.html)
 
-	 defines the core features that support alternatives to the built-in approaches to synchronization and interthread communication.
+
+	 Defines the core features that support alternatives to the built-in approaches to synchronization and interthread communication.
 	  synchronizers
 	  Executors
 	  Concurrent Collections
 	  The Fork/Join Framework
 
-
- 
 Semaphore 	- Implements the classic Seamaphore
 CountDownLatch 	- Waits until a specified number of events have occurred.
 CyclicBarrier	- Enables a group of threads to wait at a prededfined execution point.
 Exchanger 	- Exchanges data between two threads.
 Phaser		- Synchronizes threads that adance through multiple phases of an operation.
 
-###[Semaphore](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/concurrent/Semaphore.html)
+### [Semaphore](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/concurrent/Semaphore.html)
 `Semaphore controls access to a shared resource by using permits in java`.
 
 * If permits are grater than Zero(>0), then `semaphore allow access to shared resource`.
 * If permits are zero or Lesser than Zero (<= 0), then `semaphore does not allow access to shared resources`.
  
+`public void release()`
 
+Release a permit and increases the number of available permits by 1. 
 
 
 

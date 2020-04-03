@@ -1,28 +1,46 @@
 package ksh.concurency;
 
-import java.util.concurrent.Semaphore;
-
-public class SemaphoreDemo {
-	static int SharedValue = 0;
-
+public class SemaphoreCustomTest {
 	public static void main(String[] args) {
-		Semaphore semaphore = new Semaphore(1);
+		SemaphoreCustom sc = new SemaphoreCustom(2);
 
-		IncrementThread it = new IncrementThread(semaphore);
-		new Thread(it, "IncrementThread").start();
-		
-		DecrementThread dt = new DecrementThread(semaphore);
+		IncrementThreadSc it1 = new IncrementThreadSc(sc);
+		new Thread(it1, "IncrementThread").start();
+
+		DecrementThreadSc dt = new DecrementThreadSc(sc);
 		new Thread(dt, "DecrementThread").start();
-		
-		System.out.println("---------------- Done ---------------");
 	}
 }
 
-class IncrementThread implements Runnable {
+class SemaphoreCustom {
+	private int permits;
 
-	Semaphore semaphore;
+	public SemaphoreCustom(int permits){
+		this.permits = permits;
+	}
 
-	public IncrementThread(Semaphore semaphore) {
+	public synchronized void acquire() throws InterruptedException {
+		if (permits > 0) {
+			permits++;
+		} else {// permit is not available wait, when thread is notified it decrement the
+				// permit.
+			this.wait();
+			permits--;
+		}
+	}
+
+	public synchronized void release() {
+		permits++;
+		if (permits > 0) {
+			this.notify();
+		}
+	}
+}
+class IncrementThreadSc implements Runnable {
+
+	private SemaphoreCustom semaphore;
+
+	public IncrementThreadSc(SemaphoreCustom semaphore) {
 		this.semaphore = semaphore;
 	}
 	
@@ -48,11 +66,11 @@ class IncrementThread implements Runnable {
 	}
 }
 
-class DecrementThread implements Runnable {
+class DecrementThreadSc implements Runnable {
 
-	Semaphore semaphore;
+	private SemaphoreCustom semaphore;
 
-	public DecrementThread(Semaphore semaphore) {
+	public DecrementThreadSc(SemaphoreCustom semaphore) {
 		this.semaphore = semaphore;
 	}
 	
@@ -76,5 +94,3 @@ class DecrementThread implements Runnable {
 		semaphore.release();
 	}
 }
-
-
