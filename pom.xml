@@ -10,7 +10,29 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>1.9</maven.compiler.target>
 		<maven.compiler.source>1.9</maven.compiler.source>
+		<mongodb-driver-sync.version>3.11.0</mongodb-driver-sync.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<JDK_12>C:/Program Files/Java/jdk-12.0.1/bin</JDK_12>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>${mongodb-driver-sync.version}</version>
+        </dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -19,6 +41,9 @@
 				<version>3.8.0</version>
 				<configuration>
 					<release>12</release>
+					<source>${maven-compiler-plugin.source}</source>
+                    <target>${maven-compiler-plugin.target}</target>
+                    <executable>${JDK_12}/bin/javac</executable>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -50,18 +75,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<dependencies>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.6.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.6.0</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	
 </project>
